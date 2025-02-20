@@ -1,43 +1,13 @@
 const apiUrl = "https://picsum.photos/v2/list?page=2&limit=20";
 const grid = document.querySelector(".container");
 
-// function to get a substring until found a substring
+// Função para obter uma substring até encontrar uma substring específica
 function getStringUntil(str, substr) {
-    const step = substr.length;
-    for (let count = 0; count < str.length; count++) {
-        let substring = str.substring(count, count + step);
-        if (substring === substr) {
-            return str.substring(0, count + step);
-        }
-    }
-    return null;
-}
-//cortar a string do images.download_url na altura do Id "https://picsum.photos/id/103/2592/1936"
-
-// alert(getStrUntil("https://picsum.photos/id/103/2592/1936","id"));
-
-function getStrUntil(str, substring) {
-    const regex = new RegExp(`.*(?<=${substring})`, "g"); // Expressao: /.*(?<=id)/g
-
-    /** 
-        Descricao da Expressao Regular /.*(?<=id)/g
-        
-        / ... / - Inicio e fim da expressao
-        g - Modo global,retorna todos os "match" encontrado 
-        . - "match" com qualquer caractere na string, exceto o caractere de final de linha
-        * - repete a busca quantas vezes for necessario 
-        (?<=id) - nome do grupo: procura a sequencia até encontrar a palavra "id" 
-
-        Sempre uso o site https://regex101.com/ para construir e testar as expressoes que preciso
-            
-    */
-
-    let result = str.match(regex); //busca por um"match" e retorna um array com os resultados
-
-    return result[0];
-
+    const index = str.indexOf(substr);
+    return index !== -1 ? str.substring(0, index + substr.length) : null;
 }
 
+// Função para criar estrelas de avaliação
 function createStars(id) {
     let stars = '';
     for (let i = 1; i <= 5; i++) {
@@ -46,25 +16,24 @@ function createStars(id) {
     return stars;
 }
 
+// Função para avaliar uma imagem e salvar a avaliação no localStorage
 function rateImage(id, rating) {
     localStorage.setItem(id, rating);
-    loadRating(id);
+    updateRatingDisplay(id);
 }
 
-function loadRating(id) {
+// Função para atualizar a exibição das estrelas com base na avaliação salva
+function updateRatingDisplay(id) {
     const rating = localStorage.getItem(id);
     if (rating) {
         const stars = document.querySelectorAll(`.star[data-id="${id}"]`);
         stars.forEach((star, index) => {
-            if (index < rating) {
-                star.innerHTML = "&#9733;";
-            } else {
-                star.innerHTML = "&#9734;";
-            }
+            star.innerHTML = index < rating ? "&#9733;" : "&#9734;";
         });
     }
 }
 
+// Função para abrir a lightbox com a imagem em tamanho maior
 function openLightbox(url) {
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightbox-image");
@@ -72,22 +41,34 @@ function openLightbox(url) {
     lightbox.style.display = "flex";
 }
 
+// Função para fechar a lightbox
 function closeLightbox() {
     const lightbox = document.getElementById("lightbox");
     lightbox.style.display = "none";
 }
 
+// Função para carregar as imagens da API e exibi-las no grid
+async function loadImages() {
+    try {
+        const response = await fetch(apiUrl);
+        const images = await response.json();
 
-fetch(apiUrl).then(response => response.json()).then(images => {
-    images.forEach(image => {
-        const div = document.createElement("div");
+        images.forEach(image => {
+            const div = document.createElement("div");
+            div.classList.add("image-container");
 
-
-        div.innerHTML = `
+            div.innerHTML = `
                 <img src="https://picsum.photos/id/${image.id}/100/100" class="thumbnail" onclick="openLightbox('${image.download_url}')"/>
-                <div>${createStars(image.id)}</div>
+                <div class="rating">${createStars(image.id)}</div>
             `;
-        grid.appendChild(div);
-        loadRating(image.id);
-    });
-});
+
+            grid.appendChild(div);
+            updateRatingDisplay(image.id);
+        });
+    } catch (error) {
+        console.error("Erro ao carregar as imagens:", error);
+    }
+}
+
+// Inicializa o carregamento das imagens
+loadImages();

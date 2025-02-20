@@ -1,34 +1,42 @@
 <!DOCTYPE html>
-<html>
+<!-- Declaração do tipo de documento como HTML5 -->
+<html lang="pt-br">
+<!-- Define o idioma da página como português do Brasil -->
 
 <head>
+    <!-- Cabeçalho do documento: contém metadados e links para recursos externos -->
     <meta charset="UTF-8">
+    <!-- Define o conjunto de caracteres como UTF-8 para suportar caracteres especiais -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a viewport para garantir que a página seja responsiva em dispositivos móveis -->
     <title>Visualizador de Imagens</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <!-- Título da página, exibido na aba do navegador -->
+     
     <link rel="stylesheet" href="visuimagens.css">
+    <!-- Link para o arquivo CSS externo que contém os estilos da página -->
 </head>
 
 <body>
+    <!-- Corpo do documento: contém o conteúdo visível da página -->
     <h2>Visualizador de Imagens</h2>
+    <!-- Título principal da página -->
     <div class="container">
-        <!-- As imagens serão carregadas aqui via JavaScript -->
+        <!-- Div que serve como contêiner para as imagens -->
+        <!-- As imagens serão carregadas dinamicamente aqui via JavaScript -->
     </div>
 
     <!-- Lightbox para visualizar a imagem em tamanho original -->
-    <div class="lightbox" id="lightbox">
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <!-- Div que representa o lightbox (modal para exibir imagens ampliadas) -->
+        <!-- O lightbox é oculto por padrão e será exibido ao clicar em uma imagem -->
         <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-        <img class="lightbox-content" id="lightbox-image">
+        <!-- Botão para fechar o lightbox (representado pelo símbolo "×") -->
+        <img class="lightbox-content" id="lightbox-image" alt="imagens aleatórias">
+        <!-- Imagem que será exibida dentro do lightbox -->
     </div>
 
     <script src="visuimagens.js"></script>
-
-  <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+    <!-- Link para o arquivo JavaScript externo que contém a lógica da página -->
 </body>
 
 </html>
