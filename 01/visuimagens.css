@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;900&display=swap");
+/* Importa a fonte "Source Code Pro" do Google Fonts com pesos 200 e 900 */
+
+body {
+  font-family: "Source Code Pro", monospace;
+  /* Define a fonte padrão do corpo da página como "Source Code Pro" */
+  background-color: #f4f4f4;
+  /* Define a cor de fundo da página como um cinza claro */
+  margin: 0;
+  padding: 0;
+  /* Remove margens e preenchimentos padrão para evitar espaços indesejados */
+}
+
+h2 {
+  font-size: 32px;
+  /* Define o tamanho da fonte do título como 32px */
+  font-weight: 900;
+  /* Define o peso da fonte como 900 (negrito) */
+  color: darkgray;
+  /* Define a cor do texto como cinza escuro */
+  text-align: center;
+  /* Centraliza o texto horizontalmente */
+  margin: 16px 0;
+  /* Adiciona uma margem de 16px no topo e na base do título */
+}
+
+.container {
+  display: grid;
+  /* Define o contêiner como um grid layout */
+  grid-template-columns: repeat(3, 1fr);
+  /* Cria 3 colunas de largura igual */
+  gap: 24px;
+  /* Define o espaçamento entre os itens do grid como 24px */
+  padding: 16px;
+  /* Adiciona um preenchimento interno de 16px ao contêiner */
+  max-width: 1200px;
+  /* Define a largura máxima do contêiner como 1200px */
+  margin: 0 auto;
+  /* Centraliza o contêiner horizontalmente na página */
+  align-items: center;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thumbnail {
+  display: inline;
+  /* Define o comportamento de exibição como inline */
+  width: 100px;
+  height: 100px;
+  /* Define o tamanho das miniaturas como 100x100 pixels */
+  cursor: pointer;
+  /* Altera o cursor para um ponteiro ao passar o mouse sobre as miniaturas */
+  background-color: #fff;
+  /* Define a cor de fundo das miniaturas como branco */
+  padding: 10px;
+  /* Adiciona um preenchimento interno de 10px às miniaturas */
+  border-radius: 8px;
+  /* Arredonda os cantos das miniaturas com um raio de 8px */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  /* Adiciona uma sombra suave às miniaturas */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  /* Adiciona uma transição suave para transform e sombra */
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  /* Aumenta ligeiramente o tamanho da miniatura ao passar o mouse */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  /* Aumenta a sombra ao passar o mouse */
+}
+
+.star {
+  display: inline-block;
+  /* Define o comportamento de exibição como inline-block */
+  font-size: 20px;
+  /* Define o tamanho da fonte das estrelas como 20px */
+  cursor: pointer;
+  /* Altera o cursor para um ponteiro ao passar o mouse sobre as estrelas */
+  color: #222;
+  /* Define a cor padrão das estrelas como cinza claro */
+  transition: color 0.2s ease;
+  /* Adiciona uma transição suave para a cor das estrelas */
+}
+
+.star:hover {
+  color: #ffcc00;
+  /* Altera a cor das estrelas para amarelo ao passar o mouse */
+}
+
+.lightbox {
+  display: none;
+  /* Oculta o lightbox por padrão */
+  position: fixed;
+  /* Fixa o lightbox na tela, independente da rolagem */
+  z-index: 1;
+  /* Define a ordem de empilhamento do lightbox (sobre outros elementos) */
+  left: 0;
+  top: 0;
+  /* Posiciona o lightbox no canto superior esquerdo da tela */
+  width: 100%;
+  height: 100%;
+  /* Define o tamanho do lightbox como 100% da largura e altura da tela */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Define a cor de fundo do lightbox como preto com 90% de opacidade */
+  align-items: center;
+  justify-content: center;
+  /* Centraliza o conteúdo do lightbox horizontal e verticalmente */
+  cursor: pointer;
+  /* Altera o cursor para um ponteiro ao passar o mouse sobre o lightbox */
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  /* Define o tamanho máximo da imagem dentro do lightbox como 90% da tela */
+  border-radius: 8px;
+  /* Arredonda os cantos da imagem com um raio de 8px */
+}
+
+.close-lightbox {
+  position: absolute;
+  /* Posiciona o botão de fechar de forma absoluta dentro do lightbox */
+  top: 16px;
+  right: 16px;
+  /* Posiciona o botão no canto superior direito do lightbox */
+  color: #f4f4f4;
+  /* Define a cor do botão de fechar como cinza claro */
+  font-size: 32px;
+  /* Define o tamanho da fonte do botão como 32px */
+  cursor: pointer;
+  /* Altera o cursor para um ponteiro ao passar o mouse sobre o botão */
+  transition: color 0.2s ease;
+  /* Adiciona uma transição suave para a cor do botão */
+}
+
+.close-lightbox:hover {
+  color: #ffcc00;
+  /* Altera a cor do botão para amarelo ao passar o mouse */
+}
+
+.page-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.icon-btn {
+  padding: 0.5rem 0.75rem;
+  border-radius: calc(infinity * 1px);
+  background-color: #cfcfcf;
+  border: none;
+  cursor: pointer;
+
+  &:is(a) {
+    text-decoration: none;
+    color: #000;
+  }
+
+  &:hover {
+    background-color: #aeaeae;
+  }
+}
+
+#page-num-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+
+  .page-link {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+
+    &:hover {
+      color: #ffcc00;
+    }
+
+    &.current {
+      color: royalblue;
+    }
+  }
+}

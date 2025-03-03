@@ -1,0 +1,61 @@
+<!doctype html>
+<!-- Declaração do tipo de documento como HTML5 -->
+<html lang="pt-br">
+  <!-- Define o idioma da página como português do Brasil -->
+
+  <head>
+    <!-- Cabeçalho do documento: contém metadados e links para recursos externos -->
+    <meta charset="UTF-8" />
+    <!-- Define o conjunto de caracteres como UTF-8 para suportar caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configura a viewport para garantir que a página seja responsiva em dispositivos móveis -->
+    <title>Visualizador de Imagens</title>
+    <!-- Título da página, exibido na aba do navegador -->
+
+    <link rel="stylesheet" href="visuimagens.css" />
+    <!-- Link para o arquivo CSS externo que contém os estilos da página -->
+  </head>
+
+  <body>
+    <template id="image-container-template">
+      <div class="image-container">
+        <img src="https://placehold.co/100x100" alt="" class="thumbnail" />
+        <div class="rating"></div>
+      </div>
+    </template>
+
+    <template id="page-link-template">
+      <span class="page-link"></span>
+    </template>
+
+    <!-- Corpo do documento: contém o conteúdo visível da página -->
+    <h2>Visualizador de Imagens</h2>
+    <!-- Título principal da página -->
+    <div class="page-nav">
+      <button id="prev" class="icon-btn" onclick="prevPage()">&lt;</button>
+      <div id="page-num-container"></div>
+      <button id="next" class="icon-btn" onclick="nextPage()">&gt;</button>
+    </div>
+    <div class="container">
+      <!-- Div que serve como contêiner para as imagens -->
+      <!-- As imagens serão carregadas dinamicamente aqui via JavaScript -->
+    </div>
+
+    <!-- Lightbox para visualizar a imagem em tamanho original -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <!-- Div que representa o lightbox (modal para exibir imagens ampliadas) -->
+      <!-- O lightbox é oculto por padrão e será exibido ao clicar em uma imagem -->
+      <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+      <!-- Botão para fechar o lightbox (representado pelo símbolo "×") -->
+      <img
+        class="lightbox-content"
+        id="lightbox-image"
+        alt="imagens aleatórias"
+      />
+      <!-- Imagem que será exibida dentro do lightbox -->
+    </div>
+
+    <script src="visuimagens.js"></script>
+    <!-- Link para o arquivo JavaScript externo que contém a lógica da página -->
+  </body>
+</html>
