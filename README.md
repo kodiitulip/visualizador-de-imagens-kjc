@@ -1,5 +1,53 @@
 # Trabalho Teórico-Prático da Disciplina de Autoração Multimídia II
 
+<details>
+
+  <summary>Sumário</summary>
+
+<!--toc:start-->
+
+- [Trabalho Teórico-Prático da Disciplina de Autoração Multimídia II](#trabalho-teórico-prático-da-disciplina-de-autoração-multimídia-ii)
+  - [Informações do Curso e Equipe](#informações-do-curso-e-equipe)
+  - [Questão 1: Paginação de Imagens](#questão-1-paginação-de-imagens)
+    - [**Problema**](#problema)
+    - [**Tarefa**](#tarefa)
+  - [Explicação](#explicação)
+    - [Código](#código)
+  - [Questão 2: Transformando a Visualização em Carrossel](#questão-2-transformando-a-visualização-em-carrossel)
+    - [**Problema**](#problema)
+    - [**Tarefa**](#tarefa)
+    - [**Explicação**](#explicação)
+    - [Código](#código)
+  - [Questão 3: Persistência do Rating com IndexedDB](#questão-3-persistência-do-rating-com-indexeddb)
+    - [**Problema**](#problema)
+    - [**Tarefa**](#tarefa)
+    - [**Explicação**](#explicação)
+    - [Código](#código)
+  - [Questão 4: Tooltip com Informações da Imagem](#questão-4-tooltip-com-informações-da-imagem)
+    - [**Problema**](#problema)
+    - [**Tarefa**](#tarefa)
+    - [**Explicação**](#explicação)
+    - [Código](#código)
+  - [Questão 5: Reforçando o Uso de Async Functions](#questão-5-reforçando-o-uso-de-async-functions)
+    - [**Problema**](#problema)
+    - [**Tarefa**](#tarefa)
+    - [**Explicação**](#explicação)
+    - [Código](#código)
+  - [Questão 6: Animações com element.classList.add()](#questão-6-animações-com-elementclasslistadd)
+    - [**Problema**](#problema)
+    - [**Tarefa**](#tarefa)
+    - [**Explicação**](#explicação)
+    - [Código](#código)
+  - [Questão 7: Implementando Filtros de Busca](#questão-7-implementando-filtros-de-busca)
+    - [**Problema:**](#problema)
+    - [**Tarefa**](#tarefa)
+    - [**Explicação**](#explicação)
+    - [Código](#código)
+  - [Questão 8: Cache de Dados com LocalStorage ou IndexedDB](#questão-8-cache-de-dados-com-localstorage-ou-indexeddb) - [**Problema:**](#problema) - [**Tarefa**](#tarefa) - [**Explicação**](#explicação) - [Código](#código)
+  <!--toc:end-->
+
+</details>
+
 ## Informações do Curso e Equipe
 
 - **Universidade:** Universidade Federal do Ceará
@@ -40,7 +88,7 @@ A ideia aqui é aprimorar a experiência do usuário, permitindo que ele navegue
 
 ### **Problema**
 
-Como converter a visualização de imagens (atualmente com ***lightbox***) para um formato de carrossel?
+Como converter a visualização de imagens (atualmente com **_lightbox_**) para um formato de carrossel?
 
 ### **Tarefa**
 
@@ -62,11 +110,11 @@ O carrossel oferece uma experiência interativa onde o usuário pode navegar pel
 
 ### **Problema**
 
-Como salvar a avaliação das imagens (*rating*) usando **IndexedDB** em vez de **localStorage**?
+Como salvar a avaliação das imagens (_rating_) usando **IndexedDB** em vez de **localStorage**?
 
 ### **Tarefa**
 
-Implemente uma solução que crie um banco de dados no navegador, armazene os *ratings* e recupere-os na inicialização da página.
+Implemente uma solução que crie um banco de dados no navegador, armazene os _ratings_ e recupere-os na inicialização da página.
 
 ### **Explicação**
 
@@ -144,7 +192,7 @@ Adicionar efeitos visuais melhora a experiência do usuário e dá um toque de m
   [Questão 06 - CSS](./06/visuimagens.css)
   [Questão 06 - JS](./06/visuimagens.js)
 
-  ---
+  ***
 
 ## Questão 7: Implementando Filtros de Busca
 
@@ -165,3 +213,26 @@ Implementar filtros melhora a usabilidade, permitindo que os usuários encontrem
 - Veja o código: [Questão 07 - HTML](./07/index.html)
   [Questão 07 - CSS](./07/visuimagens.css)
   [Questão 07 - JS](./07/visuimagens.js)
+
+  ***
+
+## Questão 8: Cache de Dados com LocalStorage ou IndexedDB
+
+### **Problema:**
+
+Como implementar um mecanismo de cache para armazenar detalhes das imagens, evitando múltiplas chamadas à API?
+
+### **Tarefa**
+
+Criem uma função para verificar se os dados da imagem já estão armazenados no cache (**localStorage** ou **IndexedDB**) e, se não estiverem, realizem a requisição e armazenem os dados.
+
+### **Explicação**
+
+Cachear dados é uma ótima prática para melhorar a performance da aplicação. Em vez de fazer uma requisição para a API toda vez que o usuário passa o mouse sobre uma imagem, você armazena os detalhes localmente (no **localStorage** ou **IndexedDB**) e os reutiliza.
+
+### Código
+
+- Veja o código: [Questão 08 - HTML](./08/index.html)
+  [Questão 08 - CSS](./08/visuimagens.css)
+  [Questão 08 - JS](./08/visuimagens.js)
+
