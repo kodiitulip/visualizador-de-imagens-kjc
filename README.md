@@ -38,7 +38,7 @@
   [Questão 02 - CSS](./02/visuimagens.css)
   [Questão 02 - JS](./02/visuimagens.js)
 
-  ---
+---
 
 ## Questão 3
 
@@ -51,3 +51,17 @@
 - Veja o código: [Questão 03 - HTML](./03/index.html)
   [Questão 03 - CSS](./03/visuimagens.css)
   [Questão 03 - JS](./03/visuimagens.js)
+
+---
+
+## Questão 4
+
+**Objetivo**:
+
+### Explicação
+
+### Código
+
+- Veja o código: [Questão 04 - HTML](./04/index.html)
+  [Questão 04 - CSS](./04/visuimagens.css)
+  [Questão 04 - JS](./04/visuimagens.js)
