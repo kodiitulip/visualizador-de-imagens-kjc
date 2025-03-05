@@ -25,3 +25,15 @@
   [Questão 01 - JS](./01/visuimagens.js)
 
 ---
+
+## Questão 2
+
+**Objetivo**:
+
+### Explicação
+
+### Código
+
+- Veja o código: [Questão 02 - HTML](./02/index.html)
+  [Questão 02 - CSS](./02/visuimagens.css)
+  [Questão 02 - JS](./02/visuimagens.js)
