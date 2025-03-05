@@ -37,3 +37,17 @@
 - Veja o código: [Questão 02 - HTML](./02/index.html)
   [Questão 02 - CSS](./02/visuimagens.css)
   [Questão 02 - JS](./02/visuimagens.js)
+
+  ---
+
+## Questão 3
+
+**Objetivo**:
+
+### Explicação
+
+### Código
+
+- Veja o código: [Questão 03 - HTML](./03/index.html)
+  [Questão 03 - CSS](./03/visuimagens.css)
+  [Questão 03 - JS](./03/visuimagens.js)
