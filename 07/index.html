@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizador de Imagens</title>
+    <link rel="stylesheet" href="visuimagens.css" />
+  </head>
+  <body>
+    <template id="image-container-template">
+      <div class="image-container">
+        <img src="https://placehold.co/100x100" alt="" class="thumbnail" />
+        <div class="rating"></div>
+      </div>
+    </template>
+
+    <template id="page-link-template">
+      <span class="page-link"></span>
+    </template>
+
+    <h2>Visualizador de Imagens</h2>
+    <!-- Adicione o campo de pesquisa -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="search-input"
+        class="search-input"
+        placeholder="Pesquisar por autor..."
+        oninput="filterImages(this.value)"
+      />
+    </div>
+    <div class="page-nav">
+      <button id="prev" class="icon-btn" onclick="prevPage()">&lt;</button>
+      <div id="page-num-container"></div>
+      <button id="next" class="icon-btn" onclick="nextPage()">&gt;</button>
+    </div>
+    <div class="container">
+      <!-- As imagens serão carregadas dinamicamente aqui via JavaScript -->
+    </div>
+
+    <!-- Lightbox para o carrossel -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+      <div class="carousel">
+        <div class="slides">
+          <!-- Slides serão adicionados dinamicamente via JavaScript -->
+        </div>
+        <button class="carousel-btn prev" onclick="prevSlide(event)">&#10094;</button>
+        <button class="carousel-btn next" onclick="nextSlide(event)">&#10095;</button>
+      </div>
+    </div>
+
+    <script src="visuimagens.js"></script>
+  </body>
+</html>
