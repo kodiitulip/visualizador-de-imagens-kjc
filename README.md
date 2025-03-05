@@ -79,3 +79,17 @@
 - Veja o código: [Questão 05 - HTML](./05/index.html)
   [Questão 05 - CSS](./05/visuimagens.css)
   [Questão 05 - JS](./05/visuimagens.js)
+
+---
+
+## Questão 6
+
+**Objetivo**:
+
+### Explicação
+
+### Código
+
+- Veja o código: [Questão 06 - HTML](./06/index.html)
+  [Questão 06 - CSS](./06/visuimagens.css)
+  [Questão 06 - JS](./06/visuimagens.js)
